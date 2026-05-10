@@ -25,7 +25,7 @@ export default function ResumePage() {
   }
 
   return (
-    <div style={{ minHeight: '100vh', backgroundColor: '#0e0d1a' }}>
+    <div style={{ minHeight: '100vh', backgroundColor: '#0e0d1a', paddingLeft: '240px' }}>
       {/* Header */}
       <div style={{ borderBottom: '1px solid #1e1d2e', padding: '32px 48px 28px', background: 'linear-gradient(180deg, rgba(124,92,252,0.05) 0%, transparent 100%)' }}>
         <div style={{ maxWidth: '860px', margin: '0 auto' }}>

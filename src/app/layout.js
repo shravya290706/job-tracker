@@ -9,11 +9,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body style={{ display: 'flex', minHeight: '100vh', backgroundColor: '#0e0d1a' }}>
+      <body style={{ backgroundColor: '#0e0d1a', minHeight: '100vh' }}>
         <Sidebar />
-        <main style={{ flex: 1, marginLeft: '240px', minHeight: '100vh', overflowY: 'auto' }}>
-          {children}
-        </main>
+        {children}
       </body>
     </html>
   );

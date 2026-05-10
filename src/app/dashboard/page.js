@@ -58,7 +58,7 @@ export default function Dashboard() {
   )
 
   return (
-    <div style={{ minHeight: '100vh', backgroundColor: '#0e0d1a' }}>
+    <div style={{ minHeight: '100vh', backgroundColor: '#0e0d1a', paddingLeft: '240px' }}>
       {/* Page Header */}
       <div style={{ padding: '36px 40px 28px', borderBottom: '1px solid #1a1928', background: 'linear-gradient(180deg, rgba(124,92,252,0.04) 0%, transparent 100%)' }}>
         <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between' }}>

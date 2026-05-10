@@ -17,7 +17,7 @@ export default function Home() {
   }, [])
 
   return (
-    <div style={{ minHeight: '100vh', backgroundColor: '#0e0d1a', marginLeft: '-240px' }}>
+    <div style={{ minHeight: '100vh', backgroundColor: '#0e0d1a', width: '100%' }}>
 
       {/* Top Nav */}
       <nav style={{ position: 'fixed', top: 0, left: 0, right: 0, zIndex: 100, padding: '0 60px', height: '64px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', backgroundColor: 'rgba(14,13,26,0.8)', backdropFilter: 'blur(20px)', borderBottom: '1px solid #1a1928' }}>

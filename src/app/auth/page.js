@@ -37,7 +37,7 @@ export default function AuthPage() {
 
   return (
     <div style={{
-      minHeight: '100vh', marginLeft: '-240px',
+      minHeight: '100vh', width: '100%',
       backgroundColor: '#0e0d1a', display: 'flex',
       backgroundImage: 'radial-gradient(ellipse 60% 40% at 50% 0%, rgba(124,92,252,0.12) 0%, transparent 60%)',
     }}>
