@@ -2,30 +2,55 @@ import Link from 'next/link'
 
 export default function JobCard({ job }) {
   return (
-    <div className="bg-white border rounded-lg p-6 hover:shadow-md transition">
-      <div className="flex items-start justify-between">
-        <div>
-          <h2 className="text-xl font-semibold text-gray-800">{job.title}</h2>
-          <p className="text-gray-500 mt-1">{job.company_name}</p>
-          <p className="text-gray-400 text-sm mt-1">{job.candidate_required_location}</p>
+    <div
+      style={{
+        background: 'linear-gradient(135deg, #1a1830 0%, #16152a 100%)',
+        border: '1px solid #1e1d2e', borderRadius: '14px', padding: '24px',
+        transition: 'border-color 0.2s, transform 0.2s, box-shadow 0.2s',
+        cursor: 'default',
+      }}
+      onMouseEnter={e => {
+        e.currentTarget.style.borderColor = 'rgba(124,92,252,0.4)'
+        e.currentTarget.style.boxShadow = '0 8px 32px rgba(124,92,252,0.1)'
+        e.currentTarget.style.transform = 'translateY(-2px)'
+      }}
+      onMouseLeave={e => {
+        e.currentTarget.style.borderColor = '#1e1d2e'
+        e.currentTarget.style.boxShadow = 'none'
+        e.currentTarget.style.transform = 'translateY(0)'
+      }}
+    >
+      <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', marginBottom: '18px' }}>
+        <div style={{ flex: 1 }}>
+          <h2 style={{ fontSize: '17px', fontWeight: 700, color: '#e2e8f0', marginBottom: '6px', fontFamily: 'Syne, sans-serif' }}>{job.title}</h2>
+          <p style={{ color: '#7c5cfc', fontSize: '14px', fontWeight: 600, marginBottom: '4px' }}>{job.company_name}</p>
+          <p style={{ color: '#555', fontSize: '13px' }}>📍 {job.candidate_required_location || 'Remote'}</p>
         </div>
-        <span className="bg-blue-100 text-blue-700 text-sm px-3 py-1 rounded-full">
-          {job.job_type}
-        </span>
+        {job.job_type && (
+          <span style={{
+            backgroundColor: 'rgba(124,92,252,0.12)', color: '#a78bfa',
+            border: '1px solid rgba(124,92,252,0.25)',
+            fontSize: '11px', padding: '4px 12px', borderRadius: '999px', fontWeight: 700,
+            whiteSpace: 'nowrap', marginLeft: '12px',
+          }}>
+            {job.job_type}
+          </span>
+        )}
       </div>
-      <div className="mt-4 flex gap-4">
-        <Link
-          href={`/jobs/${job.id}`}
-          className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 text-sm"
-        >
-          View & Score My Fit
+      <div style={{ display: 'flex', gap: '10px' }}>
+        <Link href={`/jobs/${job.id}`} style={{
+          background: 'linear-gradient(135deg, #7c5cfc, #6344e0)',
+          color: '#fff', padding: '9px 20px', borderRadius: '8px',
+          fontWeight: 700, fontSize: '13px', textDecoration: 'none',
+          boxShadow: '0 2px 12px rgba(124,92,252,0.3)',
+        }}>
+          View & Score Fit
         </Link>
-        <a
-          href={job.url}
-          target="_blank"
-          className="border px-4 py-2 rounded text-sm hover:bg-gray-50"
-        >
-          Apply Directly
+        <a href={job.url} target="_blank" style={{
+          border: '1px solid #1e1d2e', color: '#888', padding: '9px 20px',
+          borderRadius: '8px', fontWeight: 600, fontSize: '13px', textDecoration: 'none',
+        }}>
+          Apply ↗
         </a>
       </div>
     </div>

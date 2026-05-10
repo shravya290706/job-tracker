@@ -1,17 +1,19 @@
 import "./globals.css";
-import Navbar from "@/components/Navbar";
+import Sidebar from "@/components/Sidebar";
 
 export const metadata = {
-  title: "AI Career Copilot",
-  description: "Track your job applications with AI-powered fit scoring",
+  title: "CareerCopilot — AI Job Search",
+  description: "AI-powered job tracking, fit scoring, and career tools",
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>
-        <Navbar />
-        {children}
+      <body style={{ display: 'flex', minHeight: '100vh', backgroundColor: '#0e0d1a' }}>
+        <Sidebar />
+        <main style={{ flex: 1, marginLeft: '240px', minHeight: '100vh', overflowY: 'auto' }}>
+          {children}
+        </main>
       </body>
     </html>
   );
